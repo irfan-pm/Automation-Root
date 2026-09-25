@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" role="img" aria-label="Polythene roll">
+<defs>
+<linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0f2fe"/><stop offset=".4" stop-color="#7dd3fc"/><stop offset="1" stop-color="#0284c7"/></linearGradient>
+<linearGradient id="s" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bae6fd" stop-opacity=".95"/><stop offset="1" stop-color="#e0f2fe" stop-opacity=".3"/></linearGradient>
+<linearGradient id="b2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d1fae5"/><stop offset=".45" stop-color="#6ee7b7"/><stop offset="1" stop-color="#2E8B57"/></linearGradient>
+</defs>
+<ellipse cx="205" cy="236" rx="165" ry="12" fill="#0B3D5C" opacity=".14"/>
+<g transform="translate(-40 40) scale(.62)">
+<ellipse cx="110" cy="150" rx="26" ry="52" fill="#34d399"/>
+<rect x="110" y="98" width="170" height="104" fill="url(#b2)"/>
+<ellipse cx="280" cy="150" rx="26" ry="52" fill="#a7f3d0" stroke="#10b981" stroke-width="2"/>
+<ellipse cx="280" cy="150" rx="10" ry="20" fill="#475569"/>
+</g>
+<path d="M112 196 L288 196 C318 214 340 226 378 238 L160 238 C130 226 116 212 112 196 Z" fill="url(#s)" stroke="#7dd3fc"/>
+<ellipse cx="110" cy="138" rx="32" ry="62" fill="#38bdf8"/>
+<rect x="110" y="76" width="180" height="124" fill="url(#b)"/>
+<g stroke="#fff" stroke-linecap="round" opacity=".55"><path d="M120 92h160" stroke-width="6"/><path d="M120 110h120" stroke-width="3"/></g>
+<ellipse cx="290" cy="138" rx="32" ry="62" fill="#bae6fd" stroke="#0ea5e9" stroke-width="2"/>
+<g fill="none" stroke="#38bdf8" opacity=".7"><ellipse cx="290" cy="138" rx="26" ry="50"/><ellipse cx="290" cy="138" rx="20" ry="39"/></g>
+<ellipse cx="290" cy="138" rx="13" ry="25" fill="#94a3b8"/>
+<ellipse cx="290" cy="138" rx="8" ry="16" fill="#334155"/>
+</svg>

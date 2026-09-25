@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" role="img" aria-label="Disposable food packaging">
+<defs><linearGradient id="c" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e2e8f0"/></linearGradient>
+<linearGradient id="k" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdba74"/><stop offset="1" stop-color="#F97316"/></linearGradient></defs>
+<ellipse cx="200" cy="232" rx="170" ry="12" fill="#0B3D5C" opacity=".14"/>
+<ellipse cx="200" cy="214" rx="150" ry="22" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+<ellipse cx="200" cy="212" rx="112" ry="14" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<path d="M60 120h130l-8 90H68Z" fill="url(#c)" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="54" y="104" width="142" height="20" rx="6" fill="#0F766E"/>
+<rect x="64" y="96" width="122" height="12" rx="6" fill="#14b8a6" opacity=".8"/>
+<path d="M78 150h94" stroke="#0F766E" stroke-width="4" stroke-linecap="round" opacity=".35"/>
+<path d="M226 88h64l-10 122h-44Z" fill="url(#k)"/>
+<rect x="220" y="74" width="76" height="16" rx="5" fill="#0B3D5C"/>
+<path d="M270 74l6-40 10 2-5 38" fill="#2E8B57"/>
+<path d="M236 130h44" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+<path d="M306 118h52l-7 92h-38Z" fill="url(#c)" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="300" y="106" width="64" height="14" rx="5" fill="#FBBF24"/>
+<circle cx="332" cy="160" r="12" fill="#2E8B57" opacity=".25"/>
+</svg>

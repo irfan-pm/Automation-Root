@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 260" role="img" aria-label="Garbage bags in various sizes">
+<defs>
+<path id="bag" d="M50 24C38 20 30 8 20 2c8 12 14 20 20 27C20 38 8 62 6 92c-2 30 14 46 44 46s46-16 44-46C92 62 80 38 60 29c6-7 12-15 20-27C70 8 62 20 50 24Z"/>
+<linearGradient id="sh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".35" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></linearGradient>
+</defs>
+<ellipse cx="200" cy="238" rx="170" ry="12" fill="#0B3D5C" opacity=".15"/>
+<g transform="translate(40 128) scale(.8)"><use xlink:href="#bag" href="#bag" fill="#2E8B57"/><use href="#bag" xlink:href="#bag" fill="url(#sh)"/><ellipse cx="50" cy="27" rx="8" ry="5" fill="#1f6b43"/></g>
+<g transform="translate(130 40) scale(1.4)"><use href="#bag" xlink:href="#bag" fill="#1f2937"/><use href="#bag" xlink:href="#bag" fill="url(#sh)"/><ellipse cx="50" cy="27" rx="8" ry="5" fill="#0b0f14"/><path d="M28 70c6 20 6 40 2 58" stroke="#fff" stroke-opacity=".12" stroke-width="3" fill="none"/></g>
+<g transform="translate(270 106) scale(.95)"><use href="#bag" xlink:href="#bag" fill="#0369a1"/><use href="#bag" xlink:href="#bag" fill="url(#sh)"/><ellipse cx="50" cy="27" rx="8" ry="5" fill="#075985"/></g>
+<g font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="13" text-anchor="middle" fill="#fff"><text x="80" y="214">S</text><text x="200" y="200">XL</text><text x="317" y="210">M</text></g>
+</svg>
