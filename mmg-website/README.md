@@ -4,6 +4,11 @@ A one-page, fully responsive business website for **MMG** (polythene rolls, garb
 Pure HTML, CSS and vanilla JavaScript, with no build step.
 
 ## Run it locally
+**Easiest (nothing to install):**
+- Windows: double-click `start-server.bat`. The site opens at http://localhost:3000. Keep the black window open.
+- Mac: double-click `start-server.command`.
+
+**With Node.js:**
 Requires [Node.js](https://nodejs.org) 18 or newer.
 
 ```bash
