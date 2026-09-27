@@ -3,12 +3,24 @@
 A one-page, fully responsive business website for **MMG** (polythene rolls, garbage bags and disposable packaging).
 Pure HTML, CSS and vanilla JavaScript, with no build step.
 
-## Run it
-Open `index.html` in a browser, or serve the folder:
+## Run it locally
+Requires [Node.js](https://nodejs.org) 18 or newer.
 
 ```bash
-cd mmg-website && python3 -m http.server 8080   # http://localhost:8080
+cd mmg-website
+npm install        # installs the local server and the Vercel CLI
+npm run dev        # open http://localhost:3000
 ```
+
+No Node? `python3 -m http.server 3000` inside `mmg-website` works too.
+
+## Deploy to Vercel
+```bash
+npx vercel login   # sign in with your Vercel account (email or GitHub)
+npm run deploy     # runs `vercel --prod`; first run asks a few setup questions, press Enter for the defaults
+```
+The command prints your live link (for example `https://mmg-website.vercel.app`).
+Run `npm run deploy` again after any change to publish it.
 
 ## Sections
 1. Sticky navbar (transparent → solid on scroll, mobile slide-in menu, active-link tracking)

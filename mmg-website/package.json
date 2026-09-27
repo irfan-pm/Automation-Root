@@ -1,0 +1,15 @@
+{
+  "name": "mmg-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MMG polythene & disposable packaging one-page website",
+  "scripts": {
+    "dev": "serve . -l 3000",
+    "start": "serve . -l 3000",
+    "deploy": "vercel --prod"
+  },
+  "devDependencies": {
+    "serve": "^14.2.6",
+    "vercel": "^60.1.3"
+  }
+}
