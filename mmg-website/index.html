@@ -16,7 +16,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    document.documentElement.classList.add("js");
+    // If a stock photo fails to load, swap in the bundled illustration.
+    document.addEventListener("error", function (e) {
+      var t = e.target;
+      if (t.tagName === "IMG" && t.dataset.fallback && !t.dataset.failed) {
+        t.dataset.failed = "1";
+        t.classList.add("is-fallback");
+        t.src = t.dataset.fallback;
+      }
+    }, true);
+  </script>
 </head>
 <body>
 
@@ -91,56 +102,10 @@
 
         <div class="hero-visual reveal" data-anim="zoom-in" style="--d:.2s">
           <div class="hero-ring" aria-hidden="true"></div>
-          <svg class="hero-svg" viewBox="0 70 520 410" role="img" aria-label="Polythene rolls, garbage bags, shopping bags and cartons">
-            <defs>
-              <linearGradient id="hRoll" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0f9ff"/><stop offset=".4" stop-color="#7dd3fc"/><stop offset="1" stop-color="#0284c7"/></linearGradient>
-              <linearGradient id="hSheet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0f2fe" stop-opacity=".95"/><stop offset="1" stop-color="#e0f2fe" stop-opacity=".15"/></linearGradient>
-              <linearGradient id="hBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ecd0a6"/><stop offset="1" stop-color="#c9975b"/></linearGradient>
-              <linearGradient id="hShade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".3"/><stop offset=".4" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient>
-              <path id="hBag" d="M50 24C38 20 30 8 20 2c8 12 14 20 20 27C20 38 8 62 6 92c-2 30 14 46 44 46s46-16 44-46C92 62 80 38 60 29c6-7 12-15 20-27C70 8 62 20 50 24Z"/>
-            </defs>
-            <ellipse cx="260" cy="448" rx="230" ry="18" fill="#000" opacity=".22"/>
-            <!-- cartons -->
-            <g class="float-c">
-              <rect x="300" y="160" width="130" height="100" fill="url(#hBox)" stroke="#a47440" stroke-width="2"/>
-              <rect x="356" y="160" width="18" height="100" fill="#a47440" opacity=".4"/>
-              <rect x="318" y="200" width="36" height="22" rx="3" fill="#fff" opacity=".9"/>
-            </g>
-            <!-- roll -->
-            <g class="float-a">
-              <path d="M112 356 L338 356 C370 380 400 398 452 416 L150 416 C128 398 116 380 112 356 Z" fill="url(#hSheet)" stroke="#bae6fd"/>
-              <ellipse cx="110" cy="276" rx="44" ry="84" fill="#38bdf8"/>
-              <rect x="110" y="192" width="230" height="168" fill="url(#hRoll)"/>
-              <path d="M124 214h200" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".6"/>
-              <path d="M124 238h140" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".45"/>
-              <ellipse cx="340" cy="276" rx="44" ry="84" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
-              <g fill="none" stroke="#38bdf8" opacity=".75"><ellipse cx="340" cy="276" rx="36" ry="68"/><ellipse cx="340" cy="276" rx="28" ry="53"/></g>
-              <ellipse cx="340" cy="276" rx="18" ry="34" fill="#94a3b8"/>
-              <ellipse cx="340" cy="276" rx="11" ry="21" fill="#1e293b"/>
-            </g>
-            <!-- garbage bag -->
-            <g class="float-b">
-              <g transform="translate(0 280) scale(1.3)">
-                <use href="#hBag" fill="#1f2937"/><use href="#hBag" fill="url(#hShade)"/>
-                <ellipse cx="50" cy="27" rx="8" ry="5" fill="#0b0f14"/>
-              </g>
-            </g>
-            <!-- shopping bag -->
-            <g class="float-d">
-              <g transform="translate(386 250)">
-                <rect x="30" y="-4" width="44" height="28" rx="13" fill="none" stroke="#c2410c" stroke-width="6"/>
-                <path d="M0 18h104l7 150H-7Z" fill="#F97316"/>
-                <path d="M0 18h104l1 18H-1Z" fill="#fff" opacity=".14"/>
-                <rect x="18" y="72" width="68" height="40" rx="7" fill="#fff"/>
-                <text x="52" y="99" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="19" font-weight="800" fill="#0B3D5C">MMG</text>
-              </g>
-            </g>
-            <!-- eco leaf -->
-            <g class="float-a" style="animation-delay:-2s">
-              <circle cx="440" cy="120" r="34" fill="#2E8B57"/>
-              <path d="M426 134c0-20 10-30 28-32-2 18-12 30-28 32Zm0 0 14-16" stroke="#fff" stroke-width="3" fill="#a7f3d0" stroke-linejoin="round"/>
-            </g>
-          </svg>
+          <div class="hero-photos">
+            <img class="hero-photo-main" src="https://unsplash.com/photos/-aCrA9FmT8Y/download?force=true&amp;w=1200" data-fallback="assets/img/custom-bulk.svg" alt="Large warehouse stocked with packaging cartons on pallets" width="600" height="450" />
+            <img class="hero-photo-inset" src="https://unsplash.com/photos/dto4Fap3bm8/download?force=true&amp;w=640" data-fallback="assets/img/roll.svg" alt="Rolls of polyethylene film at a manufacturing plant" width="320" height="240" />
+          </div>
 
           <div class="float-card fc-1">
             <span class="fc-icon green"><i class="fa-solid fa-shield-halved"></i></span>
@@ -162,7 +127,7 @@
         <div class="about-grid">
           <div class="about-media reveal" data-anim="fade-right">
             <div class="about-frame">
-              <img src="assets/img/about.svg" alt="MMG manufacturing facility with delivery truck" width="560" height="420" loading="lazy" />
+              <img src="https://unsplash.com/photos/VnMbc9Szs-E/download?force=true&amp;w=1200" data-fallback="assets/img/about.svg" alt="MMG warehouse stocked with cartons and pallets" width="560" height="420" loading="lazy" />
             </div>
             <div class="exp-badge">
               <strong><span class="counter" data-target="10">0</span>+</strong>
@@ -281,7 +246,7 @@
 
         <div class="product-grid">
           <article class="product-card reveal" data-anim="fade-up" data-cat="industrial commercial">
-            <div class="product-media"><span class="tag">Best Seller</span><img src="assets/img/roll.svg" alt="Polythene rolls" loading="lazy" /></div>
+            <div class="product-media"><span class="tag">Best Seller</span><img src="https://unsplash.com/photos/dto4Fap3bm8/download?force=true&amp;w=800" data-fallback="assets/img/roll.svg" alt="Polythene rolls" loading="lazy" /></div>
             <div class="product-body">
               <div class="product-icon"><i class="fa-solid fa-scroll"></i></div>
               <h3>Polythene Rolls</h3>
@@ -292,7 +257,7 @@
           </article>
 
           <article class="product-card reveal" data-anim="fade-up" style="--d:.1s" data-cat="household commercial">
-            <div class="product-media"><span class="tag tag-green">All Sizes</span><img src="assets/img/garbage-bags.svg" alt="Garbage bags in small, medium and extra-large sizes" loading="lazy" /></div>
+            <div class="product-media"><span class="tag tag-green">All Sizes</span><img src="https://unsplash.com/photos/OuOmA4_Sncc/download?force=true&amp;w=800" data-fallback="assets/img/garbage-bags.svg" alt="Garbage bags in small, medium and extra-large sizes" loading="lazy" /></div>
             <div class="product-body">
               <div class="product-icon"><i class="fa-solid fa-trash-can"></i></div>
               <h3>Garbage Bags</h3>
@@ -303,7 +268,7 @@
           </article>
 
           <article class="product-card reveal" data-anim="fade-up" style="--d:.2s" data-cat="commercial household">
-            <div class="product-media"><span class="tag tag-teal">Food-Grade</span><img src="assets/img/disposable.svg" alt="Disposable food containers, cups and plates" loading="lazy" /></div>
+            <div class="product-media"><span class="tag tag-teal">Food-Grade</span><img src="https://unsplash.com/photos/tZ491UdXv7g/download?force=true&amp;w=800" data-fallback="assets/img/disposable.svg" alt="Disposable food containers, cups and plates" loading="lazy" /></div>
             <div class="product-body">
               <div class="product-icon"><i class="fa-solid fa-utensils"></i></div>
               <h3>Disposable Packaging</h3>
@@ -314,7 +279,7 @@
           </article>
 
           <article class="product-card reveal" data-anim="fade-up" data-cat="industrial commercial">
-            <div class="product-media"><span class="tag">B2B</span><img src="assets/img/custom-bulk.svg" alt="Cartons stacked on a pallet for bulk orders" loading="lazy" /></div>
+            <div class="product-media"><span class="tag">B2B</span><img src="https://unsplash.com/photos/I-_wYj9yOzw/download?force=true&amp;w=800" data-fallback="assets/img/custom-bulk.svg" alt="Cartons stacked on a pallet for bulk orders" loading="lazy" /></div>
             <div class="product-body">
               <div class="product-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
               <h3>Custom Bulk Orders</h3>
@@ -325,7 +290,7 @@
           </article>
 
           <article class="product-card reveal" data-anim="fade-up" style="--d:.1s" data-cat="commercial household">
-            <div class="product-media"><span class="tag tag-green">Eco Option</span><img src="assets/img/shopping-bags.svg" alt="Printed shopping bags" loading="lazy" /></div>
+            <div class="product-media"><span class="tag tag-green">Eco Option</span><img src="https://unsplash.com/photos/EzQHGqYtErQ/download?force=true&amp;w=800" data-fallback="assets/img/shopping-bags.svg" alt="Printed shopping bags" loading="lazy" /></div>
             <div class="product-body">
               <div class="product-icon"><i class="fa-solid fa-bag-shopping"></i></div>
               <h3>Shopping Bags</h3>
@@ -336,7 +301,7 @@
           </article>
 
           <article class="product-card reveal" data-anim="fade-up" style="--d:.2s" data-cat="industrial">
-            <div class="product-media"><span class="tag tag-teal">Industrial</span><img src="assets/img/industrial-wrap.svg" alt="Pallet wrapped in stretch film" loading="lazy" /></div>
+            <div class="product-media"><span class="tag tag-teal">Industrial</span><img src="https://unsplash.com/photos/OnbSOhz0oig/download?force=true&amp;w=800" data-fallback="assets/img/industrial-wrap.svg" alt="Pallet wrapped in stretch film" loading="lazy" /></div>
             <div class="product-body">
               <div class="product-icon"><i class="fa-solid fa-pallet"></i></div>
               <h3>Industrial Wrapping</h3>
@@ -681,7 +646,7 @@
     <div class="modal-backdrop" data-close></div>
     <div class="modal-dialog">
       <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-      <div class="modal-media"><img id="modalImg" src="" alt="" /></div>
+      <div class="modal-media"><img id="modalImg" src="" alt="" data-fallback="" /></div>
       <div class="modal-content">
         <span class="eyebrow" id="modalCat"></span>
         <h3 id="modalTitle"></h3>

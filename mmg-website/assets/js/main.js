@@ -128,32 +128,32 @@
   /* ---------- Product modal ---------- */
   const products = {
     rolls: {
-      title: "Polythene Rolls", cat: "Industrial & Commercial", img: "assets/img/roll.svg", option: "Polythene Rolls",
+      title: "Polythene Rolls", cat: "Industrial & Commercial", img: "https://unsplash.com/photos/dto4Fap3bm8/download?force=true&w=800", fallback: "assets/img/roll.svg", option: "Polythene Rolls",
       desc: "Durable, moisture-proof polythene rolls produced on modern blown-film lines. Ideal for wrapping, lining, covering, construction damp-proofing and agriculture.",
       specs: [["Material", "LDPE / HDPE / LLDPE"], ["Thickness", "20 – 200 micron"], ["Width", "12\" – 120\" (tubular or sheet)"], ["Colours", "Clear, black, blue, green, custom"], ["Applications", "Packaging, construction, agriculture, industry"]]
     },
     garbage: {
-      title: "Garbage Bags", cat: "Household & Commercial", img: "assets/img/garbage-bags.svg", option: "Garbage Bags",
+      title: "Garbage Bags", cat: "Household & Commercial", img: "https://unsplash.com/photos/OuOmA4_Sncc/download?force=true&w=800", fallback: "assets/img/garbage-bags.svg", option: "Garbage Bags",
       desc: "Leak-proof, puncture-resistant waste bags with strong bottom seals — built for homes, hotels, hospitals, offices and municipal use.",
       specs: [["Sizes", "Small 18×20\" to Jumbo 40×50\""], ["Thickness", "15 – 60 micron"], ["Colours", "Black, blue, green, yellow, red (colour-coded)"], ["Packing", "Rolls with core or flat packs"], ["Options", "Drawstring, scented, biodegradable"]]
     },
     disposable: {
-      title: "Disposable Packaging", cat: "Commercial & Household", img: "assets/img/disposable.svg", option: "Disposable Packaging",
+      title: "Disposable Packaging", cat: "Commercial & Household", img: "https://unsplash.com/photos/tZ491UdXv7g/download?force=true&w=800", fallback: "assets/img/disposable.svg", option: "Disposable Packaging",
       desc: "Hygienic, food-grade disposables for restaurants, caterers, bakeries and events — keeping food fresh and presentation clean.",
       specs: [["Range", "Containers, cups, plates, cling film, cutlery pouches"], ["Material", "Virgin food-grade PP / PE"], ["Safety", "Free from harmful additives"], ["Packing", "Retail packs & bulk cartons"], ["Ideal for", "Takeaway, catering, events"]]
     },
     custom: {
-      title: "Custom Bulk Orders", cat: "B2B / Private Label", img: "assets/img/custom-bulk.svg", option: "Custom Bulk Orders",
+      title: "Custom Bulk Orders", cat: "B2B / Private Label", img: "https://unsplash.com/photos/I-_wYj9yOzw/download?force=true&w=800", fallback: "assets/img/custom-bulk.svg", option: "Custom Bulk Orders",
       desc: "Tell us your specification and we manufacture to match — size, gauge, colour, print and packing — with scheduled monthly deliveries.",
       specs: [["Customisation", "Size, thickness, colour, additives"], ["Printing", "Up to 4-colour flexo printing"], ["MOQ", "From 100 kg per design"], ["Lead time", "7 – 10 working days"], ["Extras", "Free mock-ups, samples, credit terms"]]
     },
     shopping: {
-      title: "Shopping Bags", cat: "Commercial & Household", img: "assets/img/shopping-bags.svg", option: "Shopping Bags",
+      title: "Shopping Bags", cat: "Commercial & Household", img: "https://unsplash.com/photos/EzQHGqYtErQ/download?force=true&w=800", fallback: "assets/img/shopping-bags.svg", option: "Shopping Bags",
       desc: "Branded shopping bags that carry your logo everywhere your customers go — strong handles, vivid print and eco-friendly options.",
       specs: [["Styles", "W-cut, D-cut, loop handle, patch handle"], ["Material", "HDPE / LDPE / biodegradable"], ["Printing", "1 – 4 colours, one or both sides"], ["Sizes", "Small retail to large garment bags"], ["Ideal for", "Retail, pharmacies, boutiques, bakeries"]]
     },
     wrap: {
-      title: "Industrial Wrapping", cat: "Industrial", img: "assets/img/industrial-wrap.svg", option: "Industrial Wrapping",
+      title: "Industrial Wrapping", cat: "Industrial", img: "https://unsplash.com/photos/OnbSOhz0oig/download?force=true&w=800", fallback: "assets/img/industrial-wrap.svg", option: "Industrial Wrapping",
       desc: "High-cling stretch and shrink films that secure pallets and protect products from dust, moisture and damage during storage and transport.",
       specs: [["Range", "Stretch film, shrink film, pallet wrap, bubble wrap"], ["Thickness", "17 – 35 micron (stretch)"], ["Width", "250 mm – 500 mm rolls"], ["Use", "Hand-wrap & machine-wrap grades"], ["Ideal for", "Factories, warehouses, exporters"]]
     }
@@ -164,7 +164,11 @@
   const openModal = (key) => {
     const p = products[key];
     if (!p) return;
-    $("#modalImg").src = p.img;
+    const modalImg = $("#modalImg");
+    modalImg.classList.remove("is-fallback");
+    delete modalImg.dataset.failed;
+    modalImg.dataset.fallback = p.fallback;
+    modalImg.src = p.img;
     $("#modalImg").alt = p.title;
     $("#modalCat").textContent = p.cat;
     $("#modalTitle").textContent = p.title;

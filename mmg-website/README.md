@@ -39,8 +39,26 @@ back-to-top button, `prefers-reduced-motion` support.
 | Form submission | `assets/js/main.js`: see the `TODO`; connect to Formspree, EmailJS or your backend |
 
 ## Images
-All illustrations are lightweight custom SVGs in `assets/img/`, so the site works offline and loads fast.
-To use real product photography, replace the `src` of the product `<img>` tags (and the `img` paths in
-`products` in `main.js`) with your own `.jpg`/`.webp` photos.
+Product, hero, about and background images are free stock photos from [Unsplash](https://unsplash.com/license)
+(free for commercial use, no attribution required). They load straight from Unsplash via
+`https://unsplash.com/photos/<id>/download?force=true&w=<width>`. If a photo can't load, the page
+automatically falls back to the matching SVG illustration in `assets/img/`.
+
+| Spot | Unsplash photo |
+|------|----------------|
+| Hero (main) | [-aCrA9FmT8Y](https://unsplash.com/photos/-aCrA9FmT8Y) warehouse with cartons |
+| Hero inset, Polythene Rolls | [dto4Fap3bm8](https://unsplash.com/photos/dto4Fap3bm8) polyethylene rolls |
+| About | [VnMbc9Szs-E](https://unsplash.com/photos/VnMbc9Szs-E) warehouse with pallets |
+| Garbage Bags | [OuOmA4_Sncc](https://unsplash.com/photos/OuOmA4_Sncc) black plastic bags |
+| Disposable Packaging | [tZ491UdXv7g](https://unsplash.com/photos/tZ491UdXv7g) disposable cups |
+| Custom Bulk Orders | [I-_wYj9yOzw](https://unsplash.com/photos/I-_wYj9yOzw) pallets of goods |
+| Shopping Bags | [EzQHGqYtErQ](https://unsplash.com/photos/EzQHGqYtErQ) cart full of bags |
+| Industrial Wrapping | [OnbSOhz0oig](https://unsplash.com/photos/OnbSOhz0oig) warehouse pallets |
+| Quote banner background | [OiihX9WsEo8](https://unsplash.com/photos/OiihX9WsEo8) delivery truck |
+| Testimonials background | [9E7j5u0Mrq4](https://unsplash.com/photos/9E7j5u0Mrq4) warehouse |
+| Contact background | [8srjIDuaHLc](https://unsplash.com/photos/8srjIDuaHLc) industrial machine |
+
+For the most professional result, replace these with photos of your own products and factory:
+put the files in `assets/img/` and update the `src` values (and the `img` paths in `products` in `main.js`).
 
 Fonts (Poppins, Inter) load from Google Fonts and icons from Font Awesome (cdnjs).
