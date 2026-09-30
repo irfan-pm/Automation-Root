@@ -74,7 +74,6 @@ FormSubmit shows after activation.
 | What | Where |
 |------|-------|
 | Client names, logos & testimonials | Sample content: swap in real clients (with their permission) |
-| Social media links (`href="#"`) | Footer in `index.html` |
 
 ## Images
 Product, hero, about and background images are free stock photos from [Pexels](https://www.pexels.com/license/)
