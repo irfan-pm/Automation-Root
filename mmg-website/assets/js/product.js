@@ -29,7 +29,7 @@
         <a href="index.html#products" class="btn btn-primary btn-lg">View All Products</a>
       </div></section>`;
   } else {
-    document.title = `${p.title} | MMG Polythene & Plastic Bags, Abu Dhabi`;
+    document.title = `${p.title} | MMG Factories Management for Plastics, Qatar`;
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", p.short);
 

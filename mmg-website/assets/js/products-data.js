@@ -273,7 +273,7 @@ window.MMG_PRODUCTS = {
     "thumb": "https://images.pexels.com/photos/10058483/pexels-photo-10058483.jpeg?auto=compress&cs=tinysrgb&w=800",
     "fallback": "assets/img/garbage-bags.svg",
     "short": "Clearly marked bags for the safe collection and disposal of clinical and infectious waste in hospitals, clinics and labs.",
-    "desc": "Biohazard waste bags for the safe collection and disposal of clinical and infectious waste in hospitals, clinics, laboratories and healthcare facilities, made to meet UAE regulatory requirements.",
+    "desc": "Biohazard waste bags for the safe collection and disposal of clinical and infectious waste in hospitals, clinics, laboratories and healthcare facilities, made to meet regulatory requirements.",
     "chips": [
       "Clinical waste",
       "Clearly marked"
@@ -297,14 +297,14 @@ window.MMG_PRODUCTS = {
       ],
       [
         "Compliance",
-        "Made to UAE regulatory requirements"
+        "Made to regulatory requirements"
       ]
     ],
     "features": [
       "Biohazard marking",
       "Colour coded",
       "Strong and leak resistant",
-      "Made to UAE requirements",
+      "Made to regulatory requirements",
       "Sizes to fit standard bins"
     ],
     "applications": [
@@ -586,8 +586,8 @@ window.MMG_PRODUCTS = {
     "img": "https://images.pexels.com/photos/34585120/pexels-photo-34585120.jpeg?auto=compress&cs=tinysrgb&w=1200",
     "thumb": "https://images.pexels.com/photos/34585120/pexels-photo-34585120.jpeg?auto=compress&cs=tinysrgb&w=800",
     "fallback": "assets/img/custom-bulk.svg",
-    "short": "Your size, colour, thickness and print, produced at scale with punctual supply across the UAE and to export markets.",
-    "desc": "Tell us your specification and we manufacture to match: size, colour, thickness, printing and packing. With 10,000 metric tons of monthly capacity we supply bulk orders punctually across the UAE and to export markets.",
+    "short": "Your size, colour, thickness and print, produced at scale with punctual supply across Qatar, the GCC and to export markets.",
+    "desc": "Tell us your specification and we manufacture to match: size, colour, thickness, printing and packing. With 10,000 metric tons of monthly capacity we supply bulk orders punctually across Qatar, the GCC and to export markets.",
     "chips": [
       "Private label",
       "Bulk export"
@@ -603,7 +603,7 @@ window.MMG_PRODUCTS = {
       ],
       [
         "Supply",
-        "UAE and export markets"
+        "Qatar, GCC and export markets"
       ],
       [
         "Quality",

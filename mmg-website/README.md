@@ -1,6 +1,6 @@
-# MMG — Polythene & Disposable Packaging Website
+# MMG Factories Management for Plastics — Website
 
-A one-page, fully responsive business website for **MMG** (polythene rolls, garbage bags and disposable packaging).
+Responsive business website for **MMG Factories Management for Plastics**, a Qatar-based manufacturer of polythene sheets and plastic bags.
 Pure HTML, CSS and vanilla JavaScript, with no build step.
 
 ## Run it locally
@@ -50,10 +50,12 @@ the catalogue in `assets/js/products-data.js`. Edit a product there and both the
 product page update. The page's "Request a Quote" button opens the contact form with that product pre-selected.
 
 ## Business details
-Contact details and products come from the client's current website (oceanpfactory.com):
-Al Bayli 1 Street, Mussafah 15 (M15) Industrial Area, Abu Dhabi, UAE · P.O. Box 90894 ·
-landline +971 2 555 5637 · mobile/WhatsApp +971 56 504 1573 · oceanpf@oceanpf.ae.
-The WhatsApp number used by the form lives in `WHATSAPP_NUMBER` in `assets/js/main.js`.
+Company: MMG Factories Management for Plastics, based in Qatar. Products, capacity and export markets come from
+the client's current website (oceanpfactory.com). Current contact details on the site:
+landline +971 2 555 5637 · mobile/WhatsApp +971 56 504 1573 · oceanpf@oceanpf.ae · address "Doha, State of Qatar".
+Replace them with the Qatar office details when available (search `5555637`, `504 1573`, `oceanpf@` and `Doha`).
+The WhatsApp number used by the form and product pages is `WHATSAPP_NUMBER` in `assets/js/main.js` and `assets/js/product.js`.
+The logo is `assets/img/favicon.svg`; replace it when the final logo is ready.
 
 ## Still to replace before going live
 | What | Where |
