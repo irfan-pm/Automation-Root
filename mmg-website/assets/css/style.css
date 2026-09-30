@@ -699,3 +699,14 @@ section[id], [id="products"] { scroll-margin-top: calc(var(--nav-h) + 8px); }
 .form-failure strong { color: #991b1b; font-family: var(--font-head); }
 .form-failure p { margin: 4px 0 0; font-size: .9rem; color: #991b1b; }
 .form-failure a { color: #b91c1c; font-weight: 700; text-decoration: underline; }
+
+/* ---------- Export countries ---------- */
+.country-grid { grid-template-columns: 1fr; }
+@media (min-width: 560px) { .country-grid { grid-template-columns: 1fr 1fr; } }
+.country { display: flex; align-items: center; gap: 14px; }
+.country > i { flex: 0 0 44px; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--orange); color: #fff; font-size: 1.1rem; }
+.country h3 { margin: 0 0 2px; }
+.country p { margin: 0; color: rgba(255,255,255,.7); font-size: .88rem; }
+.home-market { margin: 18px 0 0; color: rgba(255,255,255,.8); font-size: .95rem; }
+.home-market i { color: var(--yellow); margin-right: 6px; }
+.home-market strong { color: #fff; }
