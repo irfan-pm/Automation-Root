@@ -44,15 +44,17 @@ Run `npm run deploy` again after any change to publish it.
 Extras: preloader, scroll-progress bar, fade-in-on-scroll animations, floating WhatsApp button,
 back-to-top button, `prefers-reduced-motion` support.
 
-## Before going live, replace the placeholders
+## Business details
+Contact details and products come from the client's current website (oceanpfactory.com):
+Al Bayli 1 Street, Mussafah 15 (M15) Industrial Area, Abu Dhabi, UAE · P.O. Box 90894 ·
+landline +971 2 555 5637 · mobile/WhatsApp +971 56 504 1573 · oceanpf@oceanpf.ae.
+The WhatsApp number used by the form lives in `WHATSAPP_NUMBER` in `assets/js/main.js`.
+
+## Still to replace before going live
 | What | Where |
 |------|-------|
-| Phone `+92 300 1234567` / WhatsApp `923001234567` | `index.html` (search `1234567`) and `WHATSAPP_NUMBER` in `assets/js/main.js` |
-| Email `info@mmg.pk` | `index.html` |
-| Address & map location | Contact section + footer in `index.html` (map `iframe` `q=` parameter) |
+| Client names, logos & testimonials | Sample content: swap in real clients (with their permission) |
 | Social media links (`href="#"`) | Footer in `index.html` |
-| Client names, logos & testimonials | They are sample content: swap in real clients (with their permission) |
-| Stats (10+ years, 500+ clients…) | `data-target` values in the About section |
 | Form submission | `assets/js/main.js`: see the `TODO`; connect to Formspree, EmailJS or your backend |
 
 ## Images

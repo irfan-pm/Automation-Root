@@ -11,7 +11,7 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Business details used for WhatsApp links — update in one place.
-  const WHATSAPP_NUMBER = "923001234567";
+  const WHATSAPP_NUMBER = "971565041573";
 
   /* ---------- Preloader ---------- */
   const preloader = $("#preloader");
@@ -127,37 +127,368 @@
 
   /* ---------- Product modal ---------- */
   const products = {
-    rolls: {
-      title: "Polythene Rolls", cat: "Industrial & Commercial", img: "https://images.pexels.com/photos/18541873/pexels-photo-18541873.jpeg?auto=compress&cs=tinysrgb&w=800", fallback: "assets/img/roll.svg", option: "Polythene Rolls",
-      desc: "Durable, moisture-proof polythene rolls produced on modern blown-film lines. Ideal for wrapping, lining, covering, construction damp-proofing and agriculture.",
-      specs: [["Material", "LDPE / HDPE / LLDPE"], ["Thickness", "20 – 200 micron"], ["Width", "12\" – 120\" (tubular or sheet)"], ["Colours", "Clear, black, blue, green, custom"], ["Applications", "Packaging, construction, agriculture, industry"]]
+    "ldpe": {
+      "title": "LDPE Bags",
+      "cat": "Bags",
+      "img": "https://images.pexels.com/photos/972887/pexels-photo-972887.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "fallback": "assets/img/shopping-bags.svg",
+      "option": "LDPE Bags",
+      "desc": "High-quality LDPE bags, favoured by top-tier companies for their strength and visual impact. They offer superior tear resistance and customisable printing options to meet your specific needs.",
+      "specs": [
+        [
+          "Material",
+          "Low-density polyethylene (LDPE)"
+        ],
+        [
+          "Strength",
+          "Superior tear resistance"
+        ],
+        [
+          "Printing",
+          "Custom designs to your requirements"
+        ],
+        [
+          "Options",
+          "Sizes, colours and thickness made to order"
+        ],
+        [
+          "Eco option",
+          "Oxo-biodegradable"
+        ]
+      ]
     },
-    garbage: {
-      title: "Garbage Bags", cat: "Household & Commercial", img: "https://images.pexels.com/photos/5994772/pexels-photo-5994772.jpeg?auto=compress&cs=tinysrgb&w=800", fallback: "assets/img/garbage-bags.svg", option: "Garbage Bags",
-      desc: "Leak-proof, puncture-resistant waste bags with strong bottom seals — built for homes, hotels, hospitals, offices and municipal use.",
-      specs: [["Sizes", "Small 18×20\" to Jumbo 40×50\""], ["Thickness", "15 – 60 micron"], ["Colours", "Black, blue, green, yellow, red (colour-coded)"], ["Packing", "Rolls with core or flat packs"], ["Options", "Drawstring, scented, biodegradable"]]
+    "lldpe": {
+      "title": "LLDPE Bags",
+      "cat": "Bags",
+      "img": "https://images.pexels.com/photos/5156696/pexels-photo-5156696.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "fallback": "assets/img/custom-bulk.svg",
+      "option": "LLDPE Bags",
+      "desc": "Premium LLDPE bags, preferred by leading corporations worldwide. They combine strength and sophistication for exceptional presentation, are fully customisable and offer superior durability.",
+      "specs": [
+        [
+          "Material",
+          "Linear low-density polyethylene (LLDPE)"
+        ],
+        [
+          "Strength",
+          "Superior durability and puncture resistance"
+        ],
+        [
+          "Printing",
+          "Custom designs to your requirements"
+        ],
+        [
+          "Options",
+          "Sizes, colours and thickness made to order"
+        ],
+        [
+          "Eco option",
+          "Oxo-biodegradable"
+        ]
+      ]
     },
-    disposable: {
-      title: "Disposable Packaging", cat: "Commercial & Household", img: "https://images.pexels.com/photos/33960213/pexels-photo-33960213.jpeg?auto=compress&cs=tinysrgb&w=800", fallback: "assets/img/disposable.svg", option: "Disposable Packaging",
-      desc: "Hygienic, food-grade disposables for restaurants, caterers, bakeries and events — keeping food fresh and presentation clean.",
-      specs: [["Range", "Containers, cups, plates, cling film, cutlery pouches"], ["Material", "Virgin food-grade PP / PE"], ["Safety", "Free from harmful additives"], ["Packing", "Retail packs & bulk cartons"], ["Ideal for", "Takeaway, catering, events"]]
+    "hdpe": {
+      "title": "HDPE Bags",
+      "cat": "Bags",
+      "img": "https://images.pexels.com/photos/4033160/pexels-photo-4033160.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "fallback": "assets/img/shopping-bags.svg",
+      "option": "HDPE Bags",
+      "desc": "Premium HDPE bags, favoured for their strength and versatility. They offer unbeatable durability and visual impact, with customisable options for size, colour and print.",
+      "specs": [
+        [
+          "Material",
+          "High-density polyethylene (HDPE)"
+        ],
+        [
+          "Strength",
+          "High strength at low thickness"
+        ],
+        [
+          "Printing",
+          "Custom designs to your requirements"
+        ],
+        [
+          "Uses",
+          "Retail, grocery, food and general packaging"
+        ],
+        [
+          "Eco option",
+          "Oxo-biodegradable"
+        ]
+      ]
     },
-    custom: {
-      title: "Custom Bulk Orders", cat: "B2B / Private Label", img: "https://images.pexels.com/photos/5156696/pexels-photo-5156696.jpeg?auto=compress&cs=tinysrgb&w=800", fallback: "assets/img/custom-bulk.svg", option: "Custom Bulk Orders",
-      desc: "Tell us your specification and we manufacture to match — size, gauge, colour, print and packing — with scheduled monthly deliveries.",
-      specs: [["Customisation", "Size, thickness, colour, additives"], ["Printing", "Up to 4-colour flexo printing"], ["MOQ", "From 100 kg per design"], ["Lead time", "7 – 10 working days"], ["Extras", "Free mock-ups, samples, credit terms"]]
+    "sheets": {
+      "title": "Polyethylene Sheets & Rolls",
+      "cat": "Sheets, Films & Tapes",
+      "img": "https://images.pexels.com/photos/18541873/pexels-photo-18541873.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "fallback": "assets/img/roll.svg",
+      "option": "Polyethylene Sheets & Rolls",
+      "desc": "Premium polyethylene sheets trusted by industry leaders worldwide, together with construction plastic rolls for site covering, lining, damp-proofing and general industrial use.",
+      "specs": [
+        [
+          "Material",
+          "Polyethylene"
+        ],
+        [
+          "Formats",
+          "Sheets and rolls"
+        ],
+        [
+          "Uses",
+          "Construction, industry, covering and lining"
+        ],
+        [
+          "Options",
+          "Width, thickness and colour made to order"
+        ],
+        [
+          "Eco option",
+          "Environmentally friendly sheets"
+        ]
+      ]
     },
-    shopping: {
-      title: "Shopping Bags", cat: "Commercial & Household", img: "https://images.pexels.com/photos/972887/pexels-photo-972887.jpeg?auto=compress&cs=tinysrgb&w=800", fallback: "assets/img/shopping-bags.svg", option: "Shopping Bags",
-      desc: "Branded shopping bags that carry your logo everywhere your customers go — strong handles, vivid print and eco-friendly options.",
-      specs: [["Styles", "W-cut, D-cut, loop handle, patch handle"], ["Material", "HDPE / LDPE / biodegradable"], ["Printing", "1 – 4 colours, one or both sides"], ["Sizes", "Small retail to large garment bags"], ["Ideal for", "Retail, pharmacies, boutiques, bakeries"]]
+    "garbage": {
+      "title": "Garbage Bags",
+      "cat": "Hygiene & Waste",
+      "img": "https://images.pexels.com/photos/5994772/pexels-photo-5994772.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "fallback": "assets/img/garbage-bags.svg",
+      "option": "Garbage Bags",
+      "desc": "Strong, leak-resistant garbage bags for households, offices, hotels, restaurants and municipal waste collection, produced in a full range of sizes, colours and thicknesses.",
+      "specs": [
+        [
+          "Material",
+          "Polyethylene"
+        ],
+        [
+          "Sizes",
+          "Small to jumbo, made to order"
+        ],
+        [
+          "Colours",
+          "Black and custom colours"
+        ],
+        [
+          "Uses",
+          "Homes, hospitality, offices, municipalities"
+        ],
+        [
+          "Eco option",
+          "Oxo-biodegradable"
+        ]
+      ]
     },
-    wrap: {
-      title: "Industrial Wrapping", cat: "Industrial", img: "https://images.pexels.com/photos/34585120/pexels-photo-34585120.jpeg?auto=compress&cs=tinysrgb&w=800", fallback: "assets/img/industrial-wrap.svg", option: "Industrial Wrapping",
-      desc: "High-cling stretch and shrink films that secure pallets and protect products from dust, moisture and damage during storage and transport.",
-      specs: [["Range", "Stretch film, shrink film, pallet wrap, bubble wrap"], ["Thickness", "17 – 35 micron (stretch)"], ["Width", "250 mm – 500 mm rolls"], ["Use", "Hand-wrap & machine-wrap grades"], ["Ideal for", "Factories, warehouses, exporters"]]
+    "biohazard": {
+      "title": "Biohazard Waste Bags",
+      "cat": "Hygiene & Waste",
+      "img": "https://images.pexels.com/photos/10058483/pexels-photo-10058483.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "fallback": "assets/img/garbage-bags.svg",
+      "option": "Biohazard Waste Bags",
+      "desc": "Biohazard waste bags for the safe collection and disposal of clinical and infectious waste in hospitals, clinics, laboratories and healthcare facilities, made to meet UAE regulatory requirements.",
+      "specs": [
+        [
+          "Material",
+          "Polyethylene"
+        ],
+        [
+          "Marking",
+          "Biohazard symbol and colour coding"
+        ],
+        [
+          "Uses",
+          "Hospitals, clinics, laboratories"
+        ],
+        [
+          "Sizes",
+          "Made to order"
+        ],
+        [
+          "Compliance",
+          "Made to UAE regulatory requirements"
+        ]
+      ]
+    },
+    "fruitveg": {
+      "title": "Fruit & Vegetable Rolls",
+      "cat": "Food & Retail",
+      "img": "https://images.pexels.com/photos/4033167/pexels-photo-4033167.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "fallback": "assets/img/roll.svg",
+      "option": "Fruit & Vegetable Rolls",
+      "desc": "Produce bags supplied on rolls for supermarkets, hypermarkets, groceries and fresh-food counters. Hygienic, easy to tear off and quick to open.",
+      "specs": [
+        [
+          "Format",
+          "Bags on a roll"
+        ],
+        [
+          "Uses",
+          "Fruit, vegetables and fresh produce"
+        ],
+        [
+          "Features",
+          "Easy tear-off and opening"
+        ],
+        [
+          "Options",
+          "Sizes and thickness made to order"
+        ],
+        [
+          "Eco option",
+          "Oxo-biodegradable"
+        ]
+      ]
+    },
+    "sufra": {
+      "title": "Sufra Table Sheets",
+      "cat": "Food & Retail",
+      "img": "https://images.pexels.com/photos/5086623/pexels-photo-5086623.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "fallback": "assets/img/disposable.svg",
+      "option": "Sufra Table Sheets",
+      "desc": "Disposable sufra (table) sheets that keep tables and floor dining areas clean and hygienic at homes, restaurants, camps, events and large gatherings.",
+      "specs": [
+        [
+          "Format",
+          "Sheets and rolls"
+        ],
+        [
+          "Uses",
+          "Homes, restaurants, events, gatherings"
+        ],
+        [
+          "Features",
+          "Hygienic, quick clean-up"
+        ],
+        [
+          "Options",
+          "Sizes and colours made to order"
+        ],
+        [
+          "Eco option",
+          "Oxo-biodegradable"
+        ]
+      ]
+    },
+    "shopping": {
+      "title": "Shopping Bags",
+      "cat": "Bags",
+      "img": "https://images.pexels.com/photos/5705102/pexels-photo-5705102.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "fallback": "assets/img/shopping-bags.svg",
+      "option": "Shopping Bags",
+      "desc": "Shopping bags for retailers, supermarkets, pharmacies and boutiques, with strong handles and custom printing so your brand travels with every customer.",
+      "specs": [
+        [
+          "Styles",
+          "Handle and carry bags"
+        ],
+        [
+          "Material",
+          "LDPE / HDPE"
+        ],
+        [
+          "Printing",
+          "Custom designs to your requirements"
+        ],
+        [
+          "Uses",
+          "Retail, grocery, pharmacy, fashion"
+        ],
+        [
+          "Eco option",
+          "Oxo-biodegradable"
+        ]
+      ]
+    },
+    "tape": {
+      "title": "Warning Tapes",
+      "cat": "Sheets, Films & Tapes",
+      "img": "https://images.pexels.com/photos/16231473/pexels-photo-16231473.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "fallback": "assets/img/industrial-wrap.svg",
+      "option": "Warning Tapes",
+      "desc": "High-visibility warning and barrier tapes for construction sites, roadworks, utilities, underground cable and pipe marking, and restricted areas.",
+      "specs": [
+        [
+          "Material",
+          "Polyethylene"
+        ],
+        [
+          "Uses",
+          "Construction, utilities, cable and pipe marking"
+        ],
+        [
+          "Printing",
+          "Custom warning text"
+        ],
+        [
+          "Colours",
+          "Standard safety colours"
+        ],
+        [
+          "Format",
+          "Rolls"
+        ]
+      ]
+    },
+    "greenhouse": {
+      "title": "UV Greenhouse Film",
+      "cat": "Sheets, Films & Tapes",
+      "img": "https://images.pexels.com/photos/11792259/pexels-photo-11792259.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "fallback": "assets/img/roll.svg",
+      "option": "UV Greenhouse Film",
+      "desc": "UV-stabilised greenhouse film made to withstand strong sunlight, protecting crops in greenhouses, nurseries and farms for longer.",
+      "specs": [
+        [
+          "Material",
+          "Polyethylene with UV stabiliser"
+        ],
+        [
+          "Uses",
+          "Greenhouses, nurseries, farms"
+        ],
+        [
+          "Features",
+          "Longer life under strong sunlight"
+        ],
+        [
+          "Options",
+          "Width and thickness made to order"
+        ],
+        [
+          "Format",
+          "Rolls"
+        ]
+      ]
+    },
+    "custom": {
+      "title": "Custom & Export Orders",
+      "cat": "Custom Orders",
+      "img": "https://images.pexels.com/photos/34585120/pexels-photo-34585120.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "fallback": "assets/img/custom-bulk.svg",
+      "option": "Custom & Export Orders",
+      "desc": "Tell us your specification and we manufacture to match: size, colour, thickness, printing and packing. With 10,000 metric tons of monthly capacity we supply bulk orders punctually across the UAE and to export markets.",
+      "specs": [
+        [
+          "Customisation",
+          "Size, colour, thickness and printing"
+        ],
+        [
+          "Capacity",
+          "10,000 metric tons per month"
+        ],
+        [
+          "Supply",
+          "UAE and export markets"
+        ],
+        [
+          "Quality",
+          "Strict quality control on every batch"
+        ],
+        [
+          "Also available",
+          "Laundry bags, calcium filler masterbatch, PE raw material"
+        ]
+      ]
     }
   };
+
 
   const modal = $("#productModal");
   let lastFocus = null;
