@@ -710,3 +710,10 @@ section[id], [id="products"] { scroll-margin-top: calc(var(--nav-h) + 8px); }
 .home-market { margin: 18px 0 0; color: rgba(255,255,255,.8); font-size: .95rem; }
 .home-market i { color: var(--yellow); margin-right: 6px; }
 .home-market strong { color: #fff; }
+
+/* ---------- Developer credit ---------- */
+.footer-bottom .dev-credit { justify-content: center; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.06); }
+.dev-credit p { font-size: .75rem; color: rgba(255,255,255,.45); text-align: center; }
+.dev-credit strong { color: rgba(255,255,255,.7); font-weight: 600; }
+.dev-credit a { color: rgba(255,255,255,.55); transition: color .3s; }
+.dev-credit a:hover { color: var(--yellow); }
