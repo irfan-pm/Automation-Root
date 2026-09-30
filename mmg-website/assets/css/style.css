@@ -689,3 +689,13 @@ section[id], [id="products"] { scroll-margin-top: calc(var(--nav-h) + 8px); }
 .pd-why-grid strong { display: block; font-family: var(--font-head); font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: var(--yellow); line-height: 1.1; }
 .pd-why-grid span { color: rgba(255,255,255,.8); font-size: .92rem; }
 .pd-all { text-align: center; margin-top: 40px; }
+
+/* ---------- Contact form states ---------- */
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.btn:disabled { cursor: progress; }
+.form-failure { display: flex; gap: 14px; margin-top: 20px; padding: 18px; border-radius: 14px; background: #fef2f2; border: 1px solid #fecaca; animation: pop .5s var(--ease); }
+.form-failure[hidden] { display: none; }
+.form-failure > i { color: #dc2626; font-size: 1.5rem; margin-top: 2px; }
+.form-failure strong { color: #991b1b; font-family: var(--font-head); }
+.form-failure p { margin: 4px 0 0; font-size: .9rem; color: #991b1b; }
+.form-failure a { color: #b91c1c; font-weight: 700; text-decoration: underline; }

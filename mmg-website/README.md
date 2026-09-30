@@ -60,12 +60,21 @@ The WhatsApp number used by the form and product pages is `WHATSAPP_NUMBER` in `
 `assets/js/product.js`. The logo is `assets/img/logo.png` and the browser icon is `assets/img/favicon.png`.
 Products, capacity and export markets come from the client's earlier website (oceanpfactory.com).
 
+## Contact form email
+The quote form sends each inquiry to **info@mmg.qa** through [FormSubmit](https://formsubmit.co) (free, no server
+needed). The endpoint is `FORM_ENDPOINT` in `assets/js/main.js`.
+
+One-time activation: after the first form submission, FormSubmit emails info@mmg.qa an **"Activate Form"** link.
+Click it once; from then on every inquiry arrives by email (reply goes straight to the customer). Until it is
+activated, visitors see the "could not be sent" message with WhatsApp and email alternatives.
+To hide the address in the page source, replace `info@mmg.qa` in `FORM_ENDPOINT` with the random alias
+FormSubmit shows after activation.
+
 ## Still to replace before going live
 | What | Where |
 |------|-------|
 | Client names, logos & testimonials | Sample content: swap in real clients (with their permission) |
 | Social media links (`href="#"`) | Footer in `index.html` |
-| Form submission | `assets/js/main.js`: see the `TODO`; connect to Formspree, EmailJS or your backend |
 
 ## Images
 Product, hero, about and background images are free stock photos from [Pexels](https://www.pexels.com/license/)

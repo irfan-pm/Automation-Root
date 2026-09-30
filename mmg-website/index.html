@@ -690,6 +690,8 @@
               <textarea id="message" name="message" rows="5" placeholder="Tell us about sizes, quantity and delivery city..." required></textarea>
               <small class="error"></small>
             </div>
+            <!-- Spam trap: real visitors never see or fill this field -->
+            <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitBtn">
               <span>Send Inquiry</span> <i class="fa-solid fa-paper-plane"></i>
             </button>
@@ -699,6 +701,15 @@
                 <strong>Thank you! Your inquiry has been received.</strong>
                 <p>Our sales team will contact you shortly. Need it faster?
                   <a href="#" id="waFollowUp" target="_blank" rel="noopener">Send it on WhatsApp</a>.</p>
+              </div>
+            </div>
+            <div class="form-failure" id="formFailure" role="alert" hidden>
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <div>
+                <strong>Your inquiry could not be sent.</strong>
+                <p>Please check your internet connection and try again, or
+                  <a href="#" id="waFallback" target="_blank" rel="noopener">send it on WhatsApp</a>
+                  or email <a href="mailto:info@mmg.qa">info@mmg.qa</a>.</p>
               </div>
             </div>
           </form>

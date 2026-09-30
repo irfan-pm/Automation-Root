@@ -12,6 +12,8 @@
 
   // Business details used for WhatsApp links — update in one place.
   const WHATSAPP_NUMBER = "97466964620";
+  // Contact form emails are delivered by FormSubmit (formsubmit.co) to this address.
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/info@mmg.qa";
 
   /* ---------- Preloader ---------- */
   const preloader = $("#preloader");
@@ -217,6 +219,7 @@
   /* ---------- Contact form ---------- */
   const form = $("#contactForm");
   const success = $("#formSuccess");
+  const failure = $("#formFailure");
   const submitBtn = $("#submitBtn");
   const validators = {
     name: (v) => v.trim().length >= 2 || "Please enter your name.",
@@ -242,7 +245,7 @@
     input.addEventListener("input", () => { if (input.closest(".field").classList.contains("invalid")) validateField(input); });
   });
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const inputs = Object.keys(validators).map((n) => form.elements[n]);
     const results = inputs.map(validateField);
@@ -252,18 +255,44 @@
     }
     const data = Object.fromEntries(new FormData(form).entries());
     const text = `Hello MMG, I'd like a quote.%0A%0AName: ${encodeURIComponent(data.name)}%0APhone: ${encodeURIComponent(data.phone)}%0AEmail: ${encodeURIComponent(data.email)}%0AProduct: ${encodeURIComponent(data.product || "Not specified")}%0A%0A${encodeURIComponent(data.message)}`;
-    $("#waFollowUp").href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    $("#waFollowUp").href = waLink;
+    $("#waFallback").href = waLink;
 
+    success.hidden = true;
+    failure.hidden = true;
     submitBtn.classList.add("loading");
+    submitBtn.disabled = true;
     $("span", submitBtn).textContent = "Sending...";
 
-    // TODO: connect to your backend or a form service (e.g. Formspree, EmailJS) here.
-    setTimeout(() => {
-      submitBtn.classList.remove("loading");
-      $("span", submitBtn).textContent = "Send Inquiry";
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: `New quote request from ${data.name} (MMG website)`,
+          _template: "table",
+          _replyto: data.email,
+          _honey: data._honey,
+          Name: data.name,
+          Phone: data.phone,
+          Email: data.email,
+          Product: data.product || "Not specified",
+          Message: data.message,
+          Page: location.href
+        })
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || String(json.success) === "false") throw new Error(json.message || res.status);
       success.hidden = false;
       form.reset();
-    }, 1200);
+    } catch (err) {
+      failure.hidden = false;
+    } finally {
+      submitBtn.classList.remove("loading");
+      submitBtn.disabled = false;
+      $("span", submitBtn).textContent = "Send Inquiry";
+    }
   });
 
   /* ---------- Prefill product from a product page link (?product=...) ---------- */
