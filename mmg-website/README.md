@@ -32,7 +32,7 @@ Run `npm run deploy` again after any change to publish it.
 2. Hero (animated gradient, floating product illustration, dual CTAs, trust stats)
 3. About (texture background, illustration, animated stat counters)
 4. Vision & Mission (navy, recycle pattern, glass cards, core values)
-5. Services & Products (category filter, 6 product cards, "Learn More" spec modal)
+5. Products (category filter, 12 product cards; "View Details" opens a product page: `product.html?id=<key>`)
 6. Why Choose Us + How It Works process
 7. CTA band
 8. Testimonials carousel (autoplay, dots, arrows, swipe)
@@ -43,6 +43,11 @@ Run `npm run deploy` again after any change to publish it.
 
 Extras: preloader, scroll-progress bar, fade-in-on-scroll animations, floating WhatsApp button,
 back-to-top button, `prefers-reduced-motion` support.
+
+## Product pages
+Every product has its own page at `product.html?id=<key>` (for example `product.html?id=ldpe`), built from
+the catalogue in `assets/js/products-data.js`. Edit a product there and both the home page link and its
+product page update. The page's "Request a Quote" button opens the contact form with that product pre-selected.
 
 ## Business details
 Contact details and products come from the client's current website (oceanpfactory.com):
