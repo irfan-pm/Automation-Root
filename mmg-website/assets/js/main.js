@@ -11,7 +11,7 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Business details used for WhatsApp links — update in one place.
-  const WHATSAPP_NUMBER = "971565041573";
+  const WHATSAPP_NUMBER = "97466964620";
 
   /* ---------- Preloader ---------- */
   const preloader = $("#preloader");

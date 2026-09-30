@@ -50,12 +50,15 @@ the catalogue in `assets/js/products-data.js`. Edit a product there and both the
 product page update. The page's "Request a Quote" button opens the contact form with that product pre-selected.
 
 ## Business details
-Company: MMG Factories Management for Plastics, based in Qatar. Products, capacity and export markets come from
-the client's current website (oceanpfactory.com). Current contact details on the site:
-landline +971 2 555 5637 · mobile/WhatsApp +971 56 504 1573 · oceanpf@oceanpf.ae · address "Doha, State of Qatar".
-Replace them with the Qatar office details when available (search `5555637`, `504 1573`, `oceanpf@` and `Doha`).
-The WhatsApp number used by the form and product pages is `WHATSAPP_NUMBER` in `assets/js/main.js` and `assets/js/product.js`.
-The logo is `assets/img/favicon.svg`; replace it when the final logo is ready.
+Company: MMG Factories Management for Plastics, Qatar.
+- Address: Building 18, Street 22, Zone 81, New Industrial Area, Doha, Qatar
+- Landline: +974 4017 0030
+- Mobile / WhatsApp: +974 6696 4620
+- Email: info@mmg.qa
+
+The WhatsApp number used by the form and product pages is `WHATSAPP_NUMBER` in `assets/js/main.js` and
+`assets/js/product.js`. The logo is `assets/img/logo.png` and the browser icon is `assets/img/favicon.png`.
+Products, capacity and export markets come from the client's earlier website (oceanpfactory.com).
 
 ## Still to replace before going live
 | What | Where |

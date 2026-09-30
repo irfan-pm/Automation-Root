@@ -7,7 +7,7 @@
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const WHATSAPP_NUMBER = "971565041573";
+  const WHATSAPP_NUMBER = "97466964620";
   const products = window.MMG_PRODUCTS || {};
 
   /* ---------- Fill the page from the product catalogue ---------- */
